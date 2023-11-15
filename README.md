@@ -1,19 +1,60 @@
-# Vue 3 + TypeScript + Vite
+# Projeto de Loteria
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Este projeto é uma aplicação web para jogos de loteria, incluindo tipos de jogos como Sena e Quina. Utiliza Vue.js 3 com Typescript e integra várias tecnologias e práticas de desenvolvimento web modernas.
 
-## Recommended IDE Setup
+## Tecnologias Utilizadas
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- **Vue.js 3 com Typescript**: Um framework progressivo para construir interfaces de usuário.
+- **Vuex**: Para gerenciamento de estado.
+- **Vue Router**: Para roteamento e navegação.
+- **Vue Transitions e Animations**: Para adicionar interatividade visual.
+- **Vitest**: Para testes unitários.
+- **Cypress**: Para testes funcionais.
+- **Docker**: Para containerização do projeto.
+- **Bootstrap 5 e Sass**: Para estilização.
+- **Eslint e Prettier**: Para garantir a consistência do código.
+- **GitHub Actions**: Para integração contínua e entrega contínua (CI/CD).
 
-## Type Support For `.vue` Imports in TS
+## Estrutura do Projeto
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+O projeto está organizado da seguinte forma:
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+- `/src/components/` - Contém todos os componentes reutilizáveis.
+  - `/common/` - Componentes comuns, como botões e navbar.
+  - `/lottery/` - Componentes específicos para jogos de loteria.
+- `/src/views/` - Views específicas para cada página.
+- `/src/router/` - Configurações do Vue Router.
+- `/src/store/` - Configurações do Vuex para gerenciamento de estado.
+- `/tests/` - Testes unitários e funcionais.
+- `Dockerfile` e `docker-compose.yml` - Para configuração do Docker.
 
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-# vue-lotto-simulator
+## Instalação e Configuração
+
+### Pré-requisitos
+
+Certifique-se de ter o Node.js e o npm instalados. O Docker é opcional, mas recomendado para ambientes de desenvolvimento padronizados.
+
+### Passos para Instalação
+
+1. Clone o repositório:
+git clone git@github.com:alissonvieeira/vue-lotto-simulator.git
+ou
+git clone git@github.com:alissonvieeira/vue-lotto-simulator.git
+
+2. Instale as dependências: 
+cd vue-lotto-simulator
+
+3. Execute o projeto localmente:
+npm run dev
+
+### Docker (Opcional)
+
+Para rodar o projeto em um container Docker:
+
+1. Desenvolvimento:
+docker-compose up dev
+Porta: localhost:3000
+
+2. Produção
+docker-compose up prod
+Porta: localhost:80

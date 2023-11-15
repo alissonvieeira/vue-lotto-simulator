@@ -2,6 +2,11 @@
   <div class="home">
     <Navbar />
     <h1>Bem-vindo ao Sistema de Loterias</h1>
+    
+    <div class="">
+
+    </div>
+
     <div class="game-selection">
       <router-link to="/sena" class="btn btn-primary">Jogar Sena</router-link>
       <router-link to="/quina" class="btn btn-secondary">Jogar Quina</router-link>
@@ -22,13 +27,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.home {
-  text-align: center;
-  .game-selection {
-    margin-top: 20px;
-    .btn {
-      margin: 10px;
-    }
-  }
-}
+
 </style>
