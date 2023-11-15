@@ -1,6 +1,18 @@
 version: '3.8'
+
 services:
-  web:
-    build: .
+  dev:
+    build:
+      context: .
+      target: development-stage
     ports:
-      - "8080:80"
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+
+  prod:
+    build:
+      context: .
+    ports:
+      - "80:80"
