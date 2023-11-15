@@ -1,49 +1,57 @@
 <template>
   <div class="number-selector">
     <button
-      v-for="num in 60"
-      :key="num"
-      :class="{ 'selected': selectedNumbers.includes(num) }"
-      @click="toggleNumber(num)"
+      v-for="number in totalNumbers"
+      :key="number"
+      :class="['btn', isSelected(number) ? 'btn-success' : 'btn-outline-secondary']"
+      @click="toggleNumber(number)"
     >
-      {{ num }}
+      {{ number }}
     </button>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, watch } from 'vue';
+import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
   name: 'NumberSelector',
   props: {
-    maxSelection: {
+    selectedNumbers: {
+      type: Array as () => number[],
+      default: () => []
+    },
+    totalNumbers: {
       type: Number,
-      default: 6
+      default: 60
     }
   },
+  emits: ['update:selectedNumbers'],
   setup(props, { emit }) {
-    const selectedNumbers = ref([]);
+    const isSelected = (number: number) => props.selectedNumbers.includes(number);
 
-    const toggleNumber = (num) => {
-      if (selectedNumbers.value.includes(num)) {
-        selectedNumbers.value = selectedNumbers.value.filter(n => n !== num);
-      } else if (selectedNumbers.value.length < props.maxSelection) {
-        selectedNumbers.value.push(num);
+    const toggleNumber = (number: number) => {
+      let newNumbers = [...props.selectedNumbers];
+      if (isSelected(number)) {
+        newNumbers = newNumbers.filter(n => n !== number);
+      } else {
+        newNumbers.push(number);
       }
-      emit('update:selectedNumbers', selectedNumbers.value);
+      emit('update:selectedNumbers', newNumbers);
     };
 
-    return { selectedNumbers, toggleNumber };
+    return { isSelected, toggleNumber };
   }
 });
 </script>
 
 <style scoped>
-.number-selector button {
-  /* Estilos básicos para botões */
-}
-.number-selector .selected {
-  /* Estilos para números selecionados */
+.number-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  .btn {
+    margin-bottom: 0.5rem;
+  }
 }
 </style>
