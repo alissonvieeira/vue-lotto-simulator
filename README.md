@@ -38,8 +38,6 @@ Certifique-se de ter o Node.js e o npm instalados. O Docker é opcional, mas rec
 
 1. Clone o repositório:
 git clone git@github.com:alissonvieeira/vue-lotto-simulator.git
-ou
-git clone git@github.com:alissonvieeira/vue-lotto-simulator.git
 
 2. Instale as dependências: 
 cd vue-lotto-simulator
