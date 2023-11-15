@@ -9,9 +9,9 @@
 </template>
 
 <script lang="ts">
-import NumberSelector from './components/lottery/NumberSelector.vue';
-import PriceDisplay from '@/components/lottery/PriceDisplay.vue';
-import Button from '@/components/common/Button.vue';
+import NumberSelector from '../components/loterry/NumberSelector.vue';
+import PriceDisplay from '../components/loterry/PriceDisplay.vue';
+import Button from '../components/common/Button.vue';
 import { ref } from 'vue';
 
 export default {
