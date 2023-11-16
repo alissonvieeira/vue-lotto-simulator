@@ -49,8 +49,8 @@ O projeto está organizado da seguinte forma:
 3. **Execute o projeto localmente:**
    - `npm run dev`
 
-4. **Execute os testes:**
-  - `npm run test`
+3. **Execute os testes:**
+   - `npm run test`
 
 ### 🐳 Docker (Opcional)
 
