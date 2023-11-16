@@ -9,6 +9,7 @@
         @update:selectedNumbers="selectedNumbersUpdated"
         class="mb-4"
         :maxNumbers="15"
+        :totalNumbers="80"
       />
 
       <div class="row">

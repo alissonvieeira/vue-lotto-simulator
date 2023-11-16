@@ -21,7 +21,7 @@
       </div>
       <div class="text-center">
         <router-link class="btn btn-success btn-lg" to="/sena">Novo jogo Sena</router-link>
-        <router-link class="btn btn-primary btn-lg text-white ms-3" to="/quina">Novo Jogo Quina</router-link>
+        <router-link class="btn btn-success btn-lg ms-3" to="/quina">Novo Jogo Quina</router-link>
       </div>
     </div>
   </div>
