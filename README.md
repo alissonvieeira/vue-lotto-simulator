@@ -58,3 +58,5 @@ O projeto está organizado da seguinte forma:
 - **Produção:**
   - `docker-compose up prod`
   - Acesso em: `localhost:80`
+
+Para visualizar o projeto em produção, clique [aqui](https://vue-lotto-simulator.netlify.app/).
