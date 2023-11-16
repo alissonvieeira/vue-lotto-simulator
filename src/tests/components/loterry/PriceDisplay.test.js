@@ -19,7 +19,7 @@ describe('PriceDisplay', () => {
         });
         
         getByText('Preço do Jogo');
-        expect(getByText(/R\$\s*\d+,\d+/)).toBeTruthy(); // Verifica se o texto segue o formato de moeda
+        expect(getByText(/R\$\s*\d+,\d+/)).toBeTruthy();
     });
 
 });
