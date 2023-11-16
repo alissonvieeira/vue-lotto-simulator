@@ -25,7 +25,7 @@ O projeto está organizado da seguinte forma:
 - `src/views/` - Views específicas para cada página.
 - `src/router/` - Configurações do Vue Router.
 - `src/store/` - Configurações do Vuex para gerenciamento de estado.
-- `tests/` - Testes unitários e funcionais.
+- `src/tests/` - Testes unitários e funcionais.
 - `Dockerfile` e `docker-compose.yml` - Para configuração do Docker.
 
 ## 💻 Instalação e Configuração
@@ -48,6 +48,9 @@ O projeto está organizado da seguinte forma:
 
 3. **Execute o projeto localmente:**
    - `npm run dev`
+
+4. **Execute os testes:**
+  - `npm run test`
 
 ### 🐳 Docker (Opcional)
 
