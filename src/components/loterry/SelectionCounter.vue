@@ -22,7 +22,5 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.selection-counter {
-  
-}
+
 </style>

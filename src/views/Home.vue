@@ -27,8 +27,7 @@
           </div>
         </div>
       </div>
-    </div>
-    <!-- Outras informações gerais aqui -->
+    </div>    
   </div>
 </template>
 
@@ -44,10 +43,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.home {
-  // Estilos existentes
-}
-
 .game-card {
   border-radius: 1.2rem;
   overflow: hidden;

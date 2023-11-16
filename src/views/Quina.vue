@@ -94,8 +94,10 @@ export default {
       } else {
         if (sortedNumbers.value.length < 5) {
           alert('Selecione pelo menos 5 números.');
+          return false;
         } else if (sortedNumbers.value.length > 15) {
           alert('Você selecionou mais de 15 números. Selecione no máximo 15 números.');
+          return false;
         }
       }
     };
