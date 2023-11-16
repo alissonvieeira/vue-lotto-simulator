@@ -27,7 +27,8 @@ const routes = [
     props: route => ({
       selectedNumbers: route.query.numbers.split(',').map(Number),
       totalPrice: Number(route.query.totalPrice),
-      selectedCount: Number(route.query.selectedCount)
+      selectedCount: Number(route.query.selectedCount),
+      gameName: route.query.gameName
     })
   }
 ];

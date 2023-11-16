@@ -85,7 +85,8 @@ export default {
           query: {
             numbers: sortedNumbers.value.join(','),
             totalPrice: calculatePrice(),
-            selectedCount: selectedCount.value
+            selectedCount: selectedCount.value,
+            gameName: 'Sena'
           }
         });
       } else {
