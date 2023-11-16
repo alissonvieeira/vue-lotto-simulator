@@ -58,16 +58,16 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.list-group-item {
-  background-color: #f8f9fa;
-}
+  .list-group-item {
+    background-color: #f8f9fa;
+  }
 
-.btn-lg {
-  padding: 0.75rem 1.25rem;
-}
+  .btn-lg {
+    padding: 0.75rem 1.25rem;
+  }
 
-.text-primary {
-  color: #007BFF;
-  font-size: 1.25rem;
-}
+  .text-primary {
+    color: #007BFF;
+    font-size: 1.25rem;
+  }
 </style>
