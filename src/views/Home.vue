@@ -43,52 +43,52 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.game-card {
-  border-radius: 1.2rem;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  .game-card {
+    border-radius: 1.2rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
 
-  &:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
-  }
-
-  .card-content {
-    padding: 2.5rem;
-    text-align: center;
-    transition: background-color 0.3s ease;
-
-    h2 {
-      font-size: 2.2rem;
-      margin-bottom: 1.2rem;
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
     }
 
-    p {
-      font-size: 1.3rem;
-      margin-bottom: 1.7rem;
-    }
+    .card-content {
+      padding: 2.5rem;
+      text-align: center;
+      transition: background-color 0.3s ease;
 
-    .btn {
-      font-size: 1.3rem;
-      padding: 0.9rem 1.7rem;
-      border-radius: 0.7rem;
-      transition: all 0.3s ease;
+      h2 {
+        font-size: 2.2rem;
+        margin-bottom: 1.2rem;
+      }
 
-      &:hover {
-        background-color: #fff;
-        color: #000;
-        transform: scale(1.05);
+      p {
+        font-size: 1.3rem;
+        margin-bottom: 1.7rem;
+      }
+
+      .btn {
+        font-size: 1.3rem;
+        padding: 0.9rem 1.7rem;
+        border-radius: 0.7rem;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background-color: #fff;
+          color: #000;
+          transform: scale(1.05);
+        }
       }
     }
   }
-}
 
-.sena-card {
-  background: linear-gradient(145deg, #009bff, #0062cc);
-}
+  .sena-card {
+    background: linear-gradient(145deg, #009bff, #0062cc);
+  }
 
-.quina-card {
-  background: linear-gradient(145deg, #2ecc71, #1e8449);
-}
+  .quina-card {
+    background: linear-gradient(145deg, #2ecc71, #1e8449);
+  }
 </style>

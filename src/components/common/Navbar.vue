@@ -12,19 +12,20 @@
           </li>
           <li class="nav-item">
             <router-link class="nav-link" to="/quina">Quina</router-link>
-          </li>
-          <!-- Mais itens de navegação -->
+          </li>          
         </ul>
       </div>
     </div>
   </nav>
 </template>
 
-<script>
-  // Script existente
+<script lang="ts">
+  export default {
+    name: 'Navbar'
+  };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .navbar-custom {
   background-color: #f8f9fa;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -47,7 +48,7 @@
     }
 
     .navbar-toggler-icon {
-      background-image: url('path/to/custom-icon.svg'); /* Substitua pelo caminho do seu ícone personalizado */
+      background-image: url('path/to/custom-icon.svg');
     }
   }
 

@@ -36,7 +36,6 @@ import Navbar from '../components/common/Navbar.vue';
 import NumberCountDisplay from '../components/loterry/NumberCountDisplay.vue';
 import NumberSelector from '../components/loterry/NumberSelector.vue';
 import SelectedNumbersDisplay from '../components/loterry/SelectNumbersDisplay.vue';
-import ClearSelectionButton from '../components/common/ClearSelectionButton.vue';
 import PriceDisplay from '../components/loterry/PriceDisplay.vue';
 import Button from '../components/common/Button.vue';
 import { ref, computed } from 'vue';
@@ -48,8 +47,7 @@ export default {
     Navbar,
     NumberCountDisplay,
     NumberSelector,
-    SelectedNumbersDisplay,
-    ClearSelectionButton,
+    SelectedNumbersDisplay,    
     PriceDisplay,
     Button
   },
