@@ -3,11 +3,12 @@
     <Navbar />
     <div class="container mt-5">
       <h1 class="text-center mb-2">Jogo da Sena</h1>
-      <p class="text-center mb-4">Selecione no mínimo <strong>6</strong> números para poder efetivar o jogo.</p>
+      <p class="text-center mb-4">Selecione no mínimo <strong>6</strong> e no máximo <strong>15</strong> números para poder efetivar o jogo.</p>
       <NumberSelector
         :selectedNumbers="selectedNumbers"
         @update:selectedNumbers="selectedNumbersUpdated"
         class="mb-4"
+        :maxNumbers="15"
       />
 
       <div class="row">
@@ -23,7 +24,7 @@
           <PriceDisplay :price="calculatePrice()" class="mb-3" />
         </div>
         <div class="col-12">          
-          <Button :disabled="sortedNumbers.length < 6" type="primary" @click="confirmSelection" class="btn btn-lg btn-block btn-success">Confirmar Aposta</Button>
+          <Button :disabled="sortedNumbers.length < 6 || sortedNumbers.length > 15" type="primary" @click="confirmSelection" class="btn btn-lg btn-block btn-success">Confirmar Aposta</Button>
         </div>
       </div>
     </div>
@@ -55,7 +56,7 @@ export default {
   setup() {
     const selectedNumbers = ref<number[]>([]);
     const sortedNumbers = computed(() => selectedNumbers.value.sort((a, b) => a - b));
-    const router = useRouter(); // Add router to access the router object
+    const router = useRouter();
 
     const priceTable: { [key: number]: number } = {
       6: 4.50,
@@ -79,7 +80,7 @@ export default {
     const selectedCount = computed(() => sortedNumbers.value.length);
 
     const confirmSelection = () => {
-      if (sortedNumbers.value.length >= 6) {        
+      if (sortedNumbers.value.length >= 6 && sortedNumbers.value.length <= 15) {        
         router.push({
           path: '/payment',
           query: {
@@ -90,7 +91,11 @@ export default {
           }
         });
       } else {
-        alert('Selecione pelo menos 6 números.');
+        if (sortedNumbers.value.length < 6) {
+          alert('Selecione pelo menos 6 números.');
+        } else if (sortedNumbers.value.length > 15) {
+          alert('Você selecionou mais de 15 números. Selecione no máximo 15 números.');
+        }
       }
     };
 

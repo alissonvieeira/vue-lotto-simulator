@@ -3,7 +3,7 @@
     <Navbar />
     <div class="container mt-5">
       <h1 class="text-center mb-2">Jogo da Quina</h1>
-      <p class="text-center mb-4">Selecione no mínimo <strong>5</strong> números para poder efetivar o jogo.</p>
+      <p class="text-center mb-4">Selecione no mínimo <strong>5</strong> e no máximo <strong>15</strong> números para poder efetivar o jogo.</p>
       <NumberSelector
         :selectedNumbers="selectedNumbers"
         @update:selectedNumbers="selectedNumbersUpdated"
@@ -24,7 +24,7 @@
           <PriceDisplay :price="calculatePrice()" class="mb-3" />
         </div>
         <div class="col-12">          
-          <Button :disabled="sortedNumbers.length < 5" type="primary" @click="confirmSelection" class="btn btn-lg btn-block btn-success">Confirmar Aposta</Button>
+          <Button :disabled="sortedNumbers.length < 5 || sortedNumbers.length > 15" type="primary" @click="confirmSelection" class="btn btn-lg btn-block btn-success">Confirmar Aposta</Button>
         </div>
       </div>
     </div>
@@ -40,10 +40,10 @@ import ClearSelectionButton from '../components/common/ClearSelectionButton.vue'
 import PriceDisplay from '../components/loterry/PriceDisplay.vue';
 import Button from '../components/common/Button.vue';
 import { ref, computed } from 'vue';
-import { useRouter } from 'vue-router'; // Import useRouter from vue-router
+import { useRouter } from 'vue-router';
 
 export default {
-  name: 'Quina', // Altere o nome para Quina
+  name: 'Quina',
   components: {
     Navbar,
     NumberCountDisplay,
@@ -56,10 +56,10 @@ export default {
   setup() {
     const selectedNumbers = ref<number[]>([]);
     const sortedNumbers = computed(() => selectedNumbers.value.sort((a, b) => a - b));
-    const router = useRouter(); // Add router to access the router object
+    const router = useRouter();
 
     const priceTable: { [key: number]: number } = {
-      5: 2.00, // Ajuste a tabela de preços para a Quina
+      5: 2.00,
       6: 12.00,
       7: 42.00,
       8: 112.00,
@@ -81,7 +81,7 @@ export default {
     const selectedCount = computed(() => sortedNumbers.value.length);
 
     const confirmSelection = () => {
-      if (sortedNumbers.value.length >= 5) { // Altere o mínimo para 5
+      if (sortedNumbers.value.length >= 5 && sortedNumbers.value.length <= 15) {
         router.push({
           path: '/payment',
           query: {
@@ -92,7 +92,11 @@ export default {
           }
         });
       } else {
-        alert('Selecione pelo menos 5 números.'); // Altere a mensagem para 5 números
+        if (sortedNumbers.value.length < 5) {
+          alert('Selecione pelo menos 5 números.');
+        } else if (sortedNumbers.value.length > 15) {
+          alert('Você selecionou mais de 15 números. Selecione no máximo 15 números.');
+        }
       }
     };
 
