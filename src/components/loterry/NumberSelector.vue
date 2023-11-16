@@ -1,19 +1,14 @@
 <template>
-  <div>
-    <div class="number-selector d-flex flex-wrap justify-content-center">
-      <button
-        v-for="number in totalNumbers"
-        :key="number"
-        :class="['number-button', isSelected(number) ? 'selected' : '', isDisabled(number) ? 'disabled' : '']"
-        :disabled="isDisabled(number)"
-        @click="toggleNumber(number)"
-      >
-        {{ number }}
-      </button>
-    </div>
-    <div v-if="localSelectedNumbers.length >= MAX_SELECTION" class="max-selection-message">
-      Você atingiu o limite de 15 números.
-    </div>
+  <div class="number-selector d-flex flex-wrap justify-content-center">
+    <button
+      v-for="number in totalNumbers"
+      :key="number"
+      :class="['number-button', isSelected(number) ? 'selected' : '', isDisabled(number) ? 'disabled' : '']"
+      :disabled="isDisabled(number)"
+      @click="toggleNumber(number)"
+    >
+      {{ number }}
+    </button>
   </div>
 </template>
 
@@ -53,7 +48,7 @@ export default defineComponent({
       emit('update:selectedNumbers', localSelectedNumbers.value);
     };
 
-    return { localSelectedNumbers, isSelected, isDisabled, toggleNumber, MAX_SELECTION };
+    return { isSelected, isDisabled, toggleNumber };
   }
 });
 </script>
