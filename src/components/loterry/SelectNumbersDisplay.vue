@@ -5,9 +5,9 @@
     </div>
   </div>
   <div class="selected-numbers">    
-    <span v-for="number in numbers" :key="number" class="selected-number">      
-      {{ number }}
-    </span>
+  <span v-for="number in numbers" :key="number" class="selected-number" data-testid="selected-number">      
+    {{ number }}
+  </span>
   </div>
 </template>
 
@@ -15,7 +15,7 @@
 import { defineComponent, PropType } from 'vue';
 
 export default defineComponent({
-  name: 'SelectedNumbersDisplay',
+  name: 'SelectNumbersDisplay',
   props: {
     numbers: {
       type: Array as PropType<number[]>,
